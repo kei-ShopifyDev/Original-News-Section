@@ -21,35 +21,7 @@
     <h2 class="c-news__title">{{ section.settings.title }}</h2>
     <div class="c-news__card">
       <div class="c-news__lists">
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when 'block_article' %}
-              {% assign article = articles[block.settings.article] %}
-              <a href="{{ article.url }}" class="c-news__list c-news-link">
-                <div class="c-news-link__meta">
-                  <time class="c-news-link__date" datetime="{{ article.published_at }}">
-                    {{ article.published_at | date: '%Y年%m月%d日' }}
-                  </time>
-                  {% if article.tags.size == 1 %}
-                    {% for tag in article.tags %}
-                      {% if tag contains 'news' or tag contains 'column' or tag contains 'event' %}
-                        <div class="c-news-link__label is-{{ tag | split: '_' | first }}">
-                          {{ tag | split: '_' | last }}
-                        </div>
-                      {% else %}
-                        <div class="c-news-link__label">
-                          {{ tag }}
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                  {% elsif article != blank %}
-                    <div class="c-news-link__label">お知らせ</div>
-                  {% endif %}
-                </div>
-                <h3 class="c-news-link__title">{{ article.title }}</h3>
-              </a>
-          {% endcase %}
-        {% endfor %}
+        {% content_for 'blocks' %}
       </div>
       <div class="c-news__link"><a href="{{ blog.url }}">もっとみる</a></div>
     </div>
@@ -58,9 +30,13 @@
 
 {% schema %}
 {
-  "name": "NEWSセクションブロック",
+  "name": "NEWSテーマブロック",
   "tag": "section",
   "class": "section custom-section c-news",
+  "blocks": [
+    { "type": "@theme" },
+    { "type": "@app" }
+  ],
   "settings": [
     {
       "type": "header",
@@ -123,22 +99,9 @@
       "default": 52
     }
   ],
-  "blocks": [
-    {
-      "type": "block_article",
-      "name": "記事",
-      "settings": [
-        {
-          "type": "article",
-          "id": "article",
-          "label": "記事"
-        }
-      ]
-    }
-  ],
   "presets": [
     {
-      "name": "NEWSセクションブロック"
+      "name": "NEWSテーマブロック"
     }
   ]
 }

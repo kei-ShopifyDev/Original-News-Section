@@ -1,0 +1,49 @@
+<div
+  class="group-block color-{{ block.settings.color_scheme }}"
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "グループ",
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "グループ"
+    },
+    {
+      "name": "コラム",
+      "settings": {
+        "color_scheme": "scheme-1"
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "text": "<h3>テキスト</h3>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "text": "<p>テキスト<\/p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
