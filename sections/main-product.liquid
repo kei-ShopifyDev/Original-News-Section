@@ -26,40 +26,16 @@
   {%- endif -%}
 
   {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
       }
-
-      @media screen and (min-width: 750px) {
-        .section-{{ section.id }}-padding {
-          padding-top: {{ section.settings.padding_top }}px;
-          padding-bottom: {{ section.settings.padding_bottom }}px;
-        }
-      }
-
-      .add__variant--title {
-      margin:0;
-      font-size: 1.3rem;
-      line-height: calc(1 + .5 / var(--font-body-scale));
-      letter-spacing: .04rem;
-    }
-
-    .add__variant--ref {
-      text-decoration: none;
-    }
-
-    .add__variant--inline {
-        border: var(--variant-pills-border-width) solid rgba(var(--color-foreground),var(--variant-pills-border-opacity));
-        border-radius: var(--variant-pills-radius);
-        display: inline-block;
-        margin: 0.7rem 0.5rem 0.2rem 0;
-        padding: 1rem 2rem;
-        font-size: 1.4rem;
-        letter-spacing: .1rem;
-        line-height: 1;
-        text-align: center;
-        cursor: pointer;
     }
   {%- endstyle -%}
 
@@ -113,27 +89,6 @@
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
-              {%- when 'add-variant' -%}
-                {% if product.metafields.custom.list %}
-                  <p class="add__variant--title">{{ block.settings.variation_text }}</p>
-                  {% for product_variant in product.metafields.custom.list.value %}
-                    <a
-                      class="add__variant--ref"
-                      {% if product.handle == product_variant.handle %}
-                         href="#"
-                      {% else %}
-                         href="{{ product_variant.url }}"
-                      {% endif %}
-                    >
-                      <div
-                        class="add__variant--inline"
-                        style="background:linear-gradient(to right,{{ product_variant.metafields.custom.color_1 }},{{ product_variant.metafields.custom.color_2 }})"
-                      >
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                      </div>
-                    </a>
-                  {% endfor %}
-                {% endif %}
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -777,18 +732,6 @@
   "blocks": [
     {
       "type": "@app"
-    },
-    {
-      "type": "add-variant",
-      "name": "追加バリエーション",
-      "settings": [
-        {
-          "type": "text",
-          "id": "variation_text",
-          "default": "色",
-          "label": "バリエーション名"
-        }
-      ]
     },
     {
       "type": "text",

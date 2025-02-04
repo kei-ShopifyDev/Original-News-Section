@@ -23,7 +23,7 @@
         "text_g8iGNg"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/lookbook_1.png",
+        "image": "shopify:\/\/shop_images\/FV.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -68,7 +68,7 @@
         "button_gz6Pd7"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/about_4.png",
+        "image": "shopify:\/\/shop_images\/About_Us.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -137,49 +137,6 @@
         "swipe_on_mobile": true,
         "padding_top": 44,
         "padding_bottom": 36
-      }
-    },
-    "custom_news_section_blocks_aY3xYa": {
-      "type": "custom-news-section-blocks",
-      "blocks": {
-        "block_article_KqLwrx": {
-          "type": "block_article",
-          "settings": {
-            "article": "news-blogs\/store-open"
-          }
-        },
-        "block_article_p9eKkx": {
-          "type": "block_article",
-          "settings": {
-            "article": "news-blogs\/2024-daily-trial-collection"
-          }
-        },
-        "block_article_CiyKMp": {
-          "type": "block_article",
-          "settings": {
-            "article": "news-blogs\/aloha-daytra-collabo"
-          }
-        },
-        "block_article_bBdeyA": {
-          "type": "block_article",
-          "settings": {
-            "article": "news\/test"
-          }
-        }
-      },
-      "block_order": [
-        "block_article_KqLwrx",
-        "block_article_p9eKkx",
-        "block_article_CiyKMp",
-        "block_article_bBdeyA"
-      ],
-      "settings": {
-        "title": "NEWS",
-        "color_scheme": "",
-        "padding_top_pc": 40,
-        "padding_bottom_pc": 52,
-        "padding_top_sp": 40,
-        "padding_bottom_sp": 52
       }
     },
     "collection_list_UcyE6q": {
@@ -278,8 +235,6 @@
         "show_image": true,
         "show_date": true,
         "show_author": false,
-        "show_excerpt": true,
-        "excerpt_count": 30,
         "show_view_all": true,
         "padding_top": 36,
         "padding_bottom": 36
@@ -291,7 +246,6 @@
     "image_with_text_mbnNYx",
     "featured_collection",
     "featured_collection_QGiE3f",
-    "custom_news_section_blocks_aY3xYa",
     "collection_list_UcyE6q",
     "featured_collection_J4MUwL",
     "image_banner_DKVbXP",

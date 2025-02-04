@@ -10,15 +10,12 @@
     },
     "cart-footer": {
       "type": "main-cart-footer",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 40
+      },
       "blocks": {
-        "gift_fXgrrw": {
-          "type": "gift",
-          "settings": {}
-        },
-        "delivery_pkTQTJ": {
-          "type": "delivery",
-          "settings": {}
-        },
         "subtotal": {
           "type": "subtotal",
           "settings": {}
@@ -29,16 +26,9 @@
         }
       },
       "block_order": [
-        "gift_fXgrrw",
-        "delivery_pkTQTJ",
         "subtotal",
         "buttons"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "padding_top": 20,
-        "padding_bottom": 40
-      }
+      ]
     }
   },
   "order": [

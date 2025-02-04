@@ -25,18 +25,13 @@
         "content": {
           "type": "content",
           "settings": {}
-        },
-        "related_products_KwzKp3": {
-          "type": "related-products",
-          "settings": {}
         }
       },
       "block_order": [
         "featured_image",
         "title",
         "share",
-        "content",
-        "related_products_KwzKp3"
+        "content"
       ],
       "settings": {}
     }

@@ -18,12 +18,6 @@
           "type": "price",
           "settings": {}
         },
-        "add_variant_n6TVAc": {
-          "type": "add-variant",
-          "settings": {
-            "variation_text": "色"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -84,7 +78,6 @@
         "vendor",
         "title",
         "price",
-        "add_variant_n6TVAc",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",

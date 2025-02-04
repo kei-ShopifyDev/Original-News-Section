@@ -126,6 +126,11 @@
           {{- 'templates.contact.form.comment' | t -}}
         </label>
       </div>
+      {% if template contains 'page' %}
+        <input type="hidden" name="contact[問い合わせ元]" value="{{ page.title }}">
+      {% elsif template contains 'product' %}
+        <input type="hidden" name="contact[問い合わせ元]" value="{{ product.title }}">
+      {% endif %}
       <div class="contact__button">
         <button type="submit" class="button">
           {{ 'templates.contact.form.send' | t }}
