@@ -105,6 +105,11 @@
                     </h2>
                   </a>
                 </div>
+                {% for tag in product.tags %}
+                  {% if tag contains 'NEW' %}
+                    <a href="/collections/allcollections/{{ tag }}">#{{ tag }}</a>
+                  {% endif %}
+                {% endfor %}
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
