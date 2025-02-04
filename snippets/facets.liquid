@@ -400,14 +400,20 @@
                     aria-describedby="a11y-refresh-page-message"
                   >
                     {%- for option in results.sort_options -%}
-                      <option
-                        value="{{ option.value | escape }}"
-                        {% if option.value == sort_by %}
-                          selected="selected"
-                        {% endif %}
-                      >
-                        {{ option.name | escape }}
-                      </option>
+                      {% unless option.value == 'manual'
+                        or option.value == 'best-salling'
+                        or option.value == 'title-ascending'
+                        or option.value == 'title-descending'
+                      %}
+                        <option
+                          value="{{ option.value | escape }}"
+                          {% if option.value == sort_by %}
+                            selected="selected"
+                          {% endif %}
+                        >
+                          {{ option.name | escape }}
+                        </option>
+                      {% endunless %}
                     {%- endfor -%}
                   </select>
                   <span class="svg-wrapper">
@@ -733,14 +739,20 @@
                           aria-describedby="a11y-refresh-page-message"
                         >
                           {%- for option in results.sort_options -%}
-                            <option
-                              value="{{ option.value | escape }}"
-                              {% if option.value == sort_by %}
-                                selected="selected"
-                              {% endif %}
-                            >
-                              {{ option.name | escape }}
-                            </option>
+                            {% unless option.value == 'manual'
+                              or option.value == 'best-salling'
+                              or option.value == 'title-ascending'
+                              or option.value == 'title-descending'
+                            %}
+                              <option
+                                value="{{ option.value | escape }}"
+                                {% if option.value == sort_by %}
+                                  selected="selected"
+                                {% endif %}
+                              >
+                                {{ option.name | escape }}
+                              </option>
+                            {% endunless %}
                           {%- endfor -%}
                         </select>
                         <span class="svg-wrapper">
